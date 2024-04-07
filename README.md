@@ -43,13 +43,11 @@ Crear un archivo .env con las variables de entorno de la api
 
 ```bash
 HTTP_PORT=4000
-SECRE_KEY=jfelipaip
-EXPIRE_TOKEN=2h
-POSTGRES_HOST=localhost
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=12345
-POSTGRES_DB=systransportdb
-DB_DRIVER=postgres
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PORT=3306
+MYSQL_DBNAME=nestdb
+MYSQL_PASSWORD=
 ```
 
 ## Uso
