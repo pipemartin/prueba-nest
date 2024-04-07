@@ -39,7 +39,7 @@ npm install
 ``` 
 
 
-Crear un archivo .env con las variables de entorno de la api
+Crear un archivo .env con las variables de entorno de la api (Se Crear en la raiz del proyecto)
 
 ```bash
 HTTP_PORT=4000
