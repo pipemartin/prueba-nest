@@ -62,7 +62,7 @@ A continuación, use la herramiente preferida para enviar peticiones HTTP. En mi
 
 Primero va la ruta de registro que es la siguiente: http://localhost:3000/habitacion
 
-en el body pasar un json con la siguiente estructura: 
+Hacer una peticion POST, en el body pasar un json con la siguiente estructura: 
 
 ```json
 {
