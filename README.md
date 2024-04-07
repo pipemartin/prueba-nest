@@ -80,7 +80,7 @@ la api debe de responder con status 201 (created).
 
 http://localhost:3000/habitacion  
 
-#### Metodo de traer a todos las habitacion segun id, se usa la peticion Get. Se modifica el numero 1 segun la cantidad de habitacion creada
+#### Metodo de traer a todos las habitacion segun id, se usa la peticion Get. Se modifica el numero 1 segun el id que busca de la habitacion creada
 
 http://localhost:3000/habitacion/1 
 
