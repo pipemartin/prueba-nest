@@ -11,20 +11,38 @@ export class ClienteService {
     ){}
     //funcion de crear cliente
     async createCliente(cliente: CreateClienteDto){
-        const email = cliente.email
-        const clienteFound = await this.clienteRepository.findOne({
-            where: {
-                email
-            }
-        })
-        //validacion si encuentra un cliente mediante la comparacion de correo
-        if(clienteFound) throw new HttpException("Client found", HttpStatus.NOT_FOUND);
-        const newCliente = this.clienteRepository.create(cliente)
-        return this.clienteRepository.save(newCliente)
+        try {
+            const email = cliente.email
+            const clienteFound = await this.clienteRepository.findOne({
+                where: {
+                    email
+                }
+            })
+            //validacion si encuentra un cliente mediante la comparacion de correo
+            if(clienteFound) throw new HttpException("Client found", HttpStatus.NOT_FOUND);
+            const newCliente = this.clienteRepository.create(cliente)
+            return this.clienteRepository.save(newCliente)
+        } catch (error) {
+            throw new HttpException({
+                error
+            }, HttpStatus.FORBIDDEN, {
+                cause: error
+            });
+        }
     }
     //funcion de listar clientes
     getCliente() {
-        return this.clienteRepository.find()
+        try {
+            return this.clienteRepository.find()
+        } catch (error) {
+            throw new HttpException({
+                status: HttpStatus.FORBIDDEN,
+                error: 'Error en la api',
+            }, HttpStatus.FORBIDDEN, {
+                cause: error
+            });
+        }
     }
-
 }
+
+
